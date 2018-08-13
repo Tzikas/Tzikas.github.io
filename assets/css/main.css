@@ -2132,6 +2132,7 @@ input, select, textarea {
 			.main.style3 {
 				text-align: center;
 				padding: 3em 10px 3em 10px;
+				padding:0; /*FIXME*/
 			}
 
 		}
@@ -2140,6 +2141,7 @@ input, select, textarea {
 
 			.main > .content {
 				max-width: calc(100% - 1.5em);
+				max-width:100%;/*FIXME*/
 			}
 
 		}
@@ -2311,6 +2313,8 @@ iframe::-webkit-scrollbar {
 iframe{
 	width:100%;
 	height:100%;
+	overflow:hidden;
+	
 }
 
 article.from-left, article.from-right{
