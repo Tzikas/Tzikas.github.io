@@ -2317,7 +2317,32 @@ iframe{
 	
 }
 
+iframe body {
+	overflow:hidden
+}
+
 article.from-left, article.from-right{
   width:100vw;
   height:100vh;
 }
+
+.description{
+	position:absolute;
+	width:10%;
+	height:10%;
+	text-align:center;
+	height:10px;
+	transition: all .5s; 
+	background:rgba(0,0,0,.7)
+}
+
+.description.show{
+	height:100%;
+	width:100%;
+}
+
+.description.hide{
+	display:none;
+}
+
+

@@ -213,4 +213,14 @@
 				$window.trigger('resize');
 			});
 
+
+	$('.close').click(function(){
+		//$(this).parent().addClass('hide')
+	})
+	$('article').click(function(){
+	    console.log(this) 
+		$(this).find('.description').toggleClass('show')
+	})
+
+
 })(jQuery);
