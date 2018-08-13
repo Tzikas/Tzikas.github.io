@@ -2333,7 +2333,8 @@ article.from-left, article.from-right{
 	text-align:center;
 	height:10px;
 	transition: all .5s; 
-	background:rgba(0,0,0,.7)
+	background:rgba(0,0,0,.7);
+	overflow:hidden;
 }
 
 .description.show{
@@ -2345,4 +2346,12 @@ article.from-left, article.from-right{
 	display:none;
 }
 
+#loading{
+	display:none;
+}
 
+.is-preload #loading{
+	display:block;
+	    position: fixed;
+    z-index: 2345678;
+}

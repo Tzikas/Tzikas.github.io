@@ -14,6 +14,7 @@
 	</head>
 	<body class="is-preload">
 
+		<ul id="loading"><li>LOADING....</li></ul>
 		<!-- Header -->
 			<header id="header">
 				<h1>Big Picture</h1>
@@ -79,10 +80,19 @@
 					</header>
 
 					<!-- Gallery  -->
+						<script>
+							function loading(iframe){
+								document.getElementById('loading').innerHTML += `<li>${iframe.title}</li>`; 
+							}
+						</script>
 						<div class="gallery">
 							<article class="from-left">
-								<p class="description">Yo</p> 
-									<iframe src="https://reminder-ai.herokuapp.com/"></iframe>  
+								<p class="description">Yo
+									<a href="https://reminder-ai.herokuapp.com/" target="_blank">Live</a> 
+									
+								</p>
+									
+									<iframe title="Reminder-AI" onload="loading(this)" src="https://reminder-ai.herokuapp.com/"></iframe>
 															
 								
 							</article>
@@ -90,55 +100,55 @@
 								<p class="description">can isee this<span class="close">X</span></p> 
 
 								
-									<iframe src="https://carabus-battleship.herokuapp.com/"></iframe>  
+									<iframe  title="Battleship" onload="loading(this)" src="https://carabus-battleship.herokuapp.com/"></iframe>  
 
 							</article>
 							<article class="from-left">
 								<p class="description">can isee this<span class="close">X</span></p> 
 
 								
-									<iframe src="https://tzikas.github.io/miner/"></iframe>  
+									<iframe  title="Miner" onload="loading(this)"src="https://tzikas.github.io/miner/"></iframe>  
 
 							</article>
 							<article class="from-right">
 								<p class="description">can isee this<span class="close">X</span></p> 
 
 								
-									<iframe scrolling="no"  src="https://infinite-sands-55872.herokuapp.com/"></iframe>  
+									<iframe  title="Coelho Properties" onload="loading(this)" src="https://infinite-sands-55872.herokuapp.com/"></iframe>  
 
 							</article>
 							<article class="from-left">
 								<p class="description">can isee this<span class="close">X</span></p> 
 
 								
-									<iframe src="https://cryoptofolio.netlify.com/"></iframe>  
+									<iframe title="Cryptofolio" onload="loading(this)" src="https://cryoptofolio.netlify.com/"></iframe>  
 
 							</article>
 							<article class="from-right">
-									<iframe src="https://sharp-nightingale-21d173.netlify.com/"></iframe>  
+									<iframe  title="Fantasy Football" onload="loading(this)" src="https://sharp-nightingale-21d173.netlify.com/"></iframe>  
 
 							</article>
 							<article class="from-left">
-									<iframe src="https://ravens-app.herokuapp.com/"></iframe>  
+									<iframe title="Ravens" onload="loading(this)" src="https://ravens-app.herokuapp.com/"></iframe>  
 															</article>
 							<article class="from-right">
-									<iframe src="https://cityscene-app.herokuapp.com/"></iframe>  
+									<iframe title="CityScene" onload="loading(this)" src="https://cityscene-app.herokuapp.com/"></iframe>  
 
 							</article>
 							<article class="from-left">
-									<iframe src="https://devtrader.github.io/RocketFinder/"></iframe>  
+									<iframe title="Rocket Finder" onload="loading(this)" src="https://devtrader.github.io/RocketFinder/"></iframe>  
 
 							</article>
 							<article class="from-right">
-									<iframe src="https://letsplayapp.herokuapp.com/"></iframe>  
+									<iframe title="LetsPlay" onload="loading(this)" src="https://letsplayapp.herokuapp.com/"></iframe>  
 
 							</article>
 							<article class="from-left">
-									<iframe src="https://mymoodful.herokuapp.com/"></iframe>  
+									<iframe title="Moodful" onload="loading(this)" src="https://mymoodful.herokuapp.com/"></iframe>  
 
 							</article>
 							<article class="from-right">
-									<iframe src="https://longwharf.com/"></iframe>  
+									<iframe title="LongWharf" onload="loading(this)" src="https://longwharf.com/"></iframe>  
 
 							</article>
 
@@ -189,7 +199,7 @@
 
 			</footer>
 
-		<!-- Scripts -->
+			<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

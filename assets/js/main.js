@@ -76,8 +76,8 @@
 	// Gallery.
 		$window.on('load', function() {
 
-			var $gallery = $('.gallery');
-
+			/*var $gallery = $('.gallery');
+	
 			$gallery.poptrox({
 				baseZIndex: 10001,
 				useBodyOverflow: false,
@@ -103,7 +103,7 @@
 						$(this)[0]._poptrox.windowMargin = 5;
 					});
 				});
-
+		*/
 		});
 
 	// Section transitions.
@@ -220,7 +220,15 @@
 	$('article').click(function(){
 	    console.log(this) 
 		$(this).find('.description').toggleClass('show')
+		
+		$(this).find('iframe')[0].scrolling = 'yes'
 	})
+	$('article').click(function(){
 
+		window.t = this; 
+		console.log(this) 
+		console.log(this.scrolling);
+		this.scrolling = 'yes'
+	})
 
 })(jQuery);
