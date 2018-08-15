@@ -106,6 +106,28 @@
 		*/
 		});
 
+
+		let s = .25;
+		$(".green:after").each(function(index){
+			 $(this).css({
+				  'transition-delay' : s*(1+index) + 's'
+			 });
+		 });
+
+
+
+
+		$('form').submit(function(e){
+			e.preventDefault();			
+			//https://mysterious-brushlands-12496.herokuapp.com/sendEmail
+			$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?${ $( this ).serialize() }`, function(data){
+				console.log('success',data) 
+				$('textarea, input[name=name], input[name=email]').val('') 
+				$('.msg').remove() 
+				$('form').append(`<i class="msg" style="color:green";>Your message was successfully sent</i>`)
+			})
+		})
+
 	// Section transitions.
 		if (browser.canUse('transition')) {
 
