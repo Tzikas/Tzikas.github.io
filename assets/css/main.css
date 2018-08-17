@@ -2268,7 +2268,7 @@ input, select, textarea {
 	}
 
 	.shoot{
-		animation: shootlaser 1.1s forwards; 
+		animation: shootlaser .7s forwards; 
 	}
 
 @keyframes shootlaser {
