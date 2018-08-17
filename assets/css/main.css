@@ -2460,6 +2460,12 @@ article.from-left, article.from-right{
 }
 
 
+@media screen and (max-width: 479px) {
+	iframe{
+		pointer-events:none;
+	}
+}
+
 @media screen and (min-width: 480px) {
 
 	.content.box p{
