@@ -2579,3 +2579,15 @@ article{
     width: 100%;
     border-radius: 0;
 }
+
+iframe{
+}
+
+
+@media screen and (min-width: 735px) {
+
+	article.from-left, article.from-right{
+		width: 50%;
+	}
+
+}
