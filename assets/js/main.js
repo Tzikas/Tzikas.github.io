@@ -84,6 +84,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		$window.on('load', function() {
 
 
+			$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?message=someone`, function(data){})
+
 			/*var $gallery = $('.gallery');
 	
 			$gallery.poptrox({
