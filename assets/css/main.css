@@ -2462,7 +2462,8 @@ article.from-left, article.from-right{
 
 @media screen and (max-width: 479px) {
 	iframe{
-		pointer-events:none;
+		border:1px solid red;
+		pointer-events:none !important;
 	}
 }
 
