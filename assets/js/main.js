@@ -310,8 +310,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 
 	$('.gallery').on('click', 'button#load', function(){
-		$('#loading').remove();
-
+		$('#loading, button#load').remove();
+		
 		$('.gallery').append(`
 							<div id="loading" style="display:block">Loading More...</div>
 							
@@ -350,25 +350,43 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 								
 									<iframe title="Ravens" onload="loading(this)" src="https://ravens-app.herokuapp.com/"></iframe>  
 							</article>
+							<article class="from-right">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Miner can find his way through a random maze
+										<a href="https://tzikas.github.io/miner/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://gist.github.com/Tzikas/2bd045f3285727a5dac9f75fe10231bb" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>javascript</span><span>es7^</span>
+									</span>
+								</p>
+
+
+								
+									<iframe  title="Miner" onload="loading(this)"src="https://tzikas.github.io/miner/"></iframe>  
+
+							</article>
 							<article class="from-left">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
-										Band Together is an app for musicians looking to jam. View other's profiles and click like on your favorite ones. If they like your profile, it's a match! A personal chatroom is created and you can set up your next jam sesh in real time. Demo account credentials: email - demo@demo. password - demo. You can also create your own account for the full user experience (there is an introduction for first time users).
-										<a href="https://bandtogether-app.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
-										<a href="https://github.com/thinkful-niko/BandTogether" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										CryptoFolio is a portfolio value tracker for cryptocurrencies, it tracks the 100 most popular cryptocurrencies and users can add the coins they own on the dashboard. After adding coins, a chart will show teh historical value of the coins they added and breakdown the total value of their portfolio throughout time.
+										<a href="https://cryoptofolio.netlify.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/CryptoFolio" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
 										<span><strong>Built with:</strong></span>
 										<span>node</span>
 										<span>mongo</span>
 										<span>mongoose</span>
-										<span>social-auth</span>
-										<span>socket.io</span>
-										<span>ejs</span>
+										<span>react</span>
+										<span>redux</span>										
 									</span>
 								</p>
+
 								
-									<iframe title="Band Together" onload="loading(this)" src="https://bandtogether-app.herokuapp.com/"></iframe>  
+									<iframe title="Cryptofolio" onload="loading(this)" src="https://cryoptofolio.netlify.com/"></iframe>  
+
 							</article>
+
 							
 							<button id="loadMore">Load Even More</button> 
 							
@@ -397,12 +415,12 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 
 	$('.gallery').on('click', 'button#loadMore', function(){
-		$('#loading').remove();
+		$('#loading, button#loadMore').remove();
 
 		$('.gallery').append(`	
 							<div id="loading" style="display:block">Loading Even More!</div>
 		
-							<article class="from-right">
+							<article class="from-left">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -420,34 +438,27 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe title="CityScene" onload="loading(this)" src="https://cityscene-app.herokuapp.com/"></iframe>  
 
 							</article>
-							<article class="from-left">
+
+								<article class="from-right">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
-										Moodful is way for you to track and analyze your moods while using some basic mindfulness principles
-										<a href="https://mymoodful.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
-										<a href="https://github.com/thinkful-niko/Moodful" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
-										<span><strong>Built with:</strong></span><span>node</span><span>mongo</span><span>express</span><span>mocha/chai</span>
+										This project utilizes launchlibrary.net API and WebGL Earth API to create an environment where the user can explore future scheduled space missions.
+										<a href="https://devtrader.github.io/RocketFinder/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/RocketFinder" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>webGL</span>
+										<span>three.js</span>
+										<span>google maps</span>
 									</span>
 								</p>
 								
-									<iframe title="Moodful" onload="loading(this)" src="https://mymoodful.herokuapp.com/"></iframe>  
+									<iframe title="Rocket Finder" onload="loading(this)" src="https://devtrader.github.io/RocketFinder/"></iframe>  
 
 							</article>
-							<article class="from-right">
-								<p class="description">
-									<i class="fa fa-cog"></i>
-									<span class="details">
-										Real Estate website for Long Wharf Capital
-			
-										<a href="https://longwharf.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
-										<span><strong>Built with:</strong></span><span>php</span><span>jquery</span><span>wordpress</span>									</span>
 
-								</p>
-								
-									<iframe title="LongWharf" onload="loading(this)" src="https://longwharf.com/"></iframe>  
 
-							</article>
+
 							<article class="from-left">
 								<p class="description">
 									<i class="fa fa-cog"></i>
@@ -474,28 +485,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe title="Soccer Tactics" onload="loading(this)" src="https://soccertactics.herokuapp.com/"></iframe>  
 
 							</article>
-							<article class="from-left">
-								<p class="description">
-									<i class="fa fa-cog"></i>
-									<span class="details">
-										Built a realty web site that scrapes an MLS service for housing data
-										<a href="https://infinite-sands-55872.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
-										<a href="https://github.com/Tzikas/coelho-realty" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
-										<span><strong>Built with:</strong></span><span>javascript</span><span>cheerio.js</span><span>heroku</span><span></span>
-									</span>
-								</p>
-
-								
-									<iframe  title="Coelho Properties" onload="loading(this)" src="https://infinite-sands-55872.herokuapp.com/"></iframe>  
-
-							</article>
-
-
-`
-
-
-
-)
+`)
 
 
 
