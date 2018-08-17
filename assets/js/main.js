@@ -424,21 +424,16 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
-											CiTYSCENE gives you a quick glimpse at what is going on in a major city near you. Curious where to grab coffee? What kind of events are coming up? What's in the news, or even what people are saying on Twitter? CitYSCENE answers all your questions at a glance.
-										<a href="https://cityscene-app.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
-										<a href="https://github.com/thinkful-niko/cityscene" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
-										<span><strong>Built with:</strong></span>
-										<span>node</span>
-										<span>mongo</span>
-										<span>mongoose</span>
-										<span>jquery</span>
-									</span>
+										Real Estate website for Long Wharf Capital
+			
+										<a href="https://longwharf.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<span><strong>Built with:</strong></span><span>php</span><span>jquery</span><span>wordpress</span>									</span>
+
 								</p>
 								
-									<iframe title="CityScene" onload="loading(this)" src="https://cityscene-app.herokuapp.com/"></iframe>  
+									<iframe title="LongWharf" onload="loading(this)" src="https://longwharf.com/"></iframe>  
 
 							</article>
-
 								<article class="from-right">
 								<p class="description">
 									<i class="fa fa-cog"></i>
