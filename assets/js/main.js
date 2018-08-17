@@ -84,7 +84,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		$window.on('load', function() {
 
 
-			 alert(String(isMobile))
 			/*var $gallery = $('.gallery');
 	
 			$gallery.poptrox({
