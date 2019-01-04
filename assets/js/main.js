@@ -31,7 +31,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		$window.on('load', function() {
 			console.log('window loaded')
 			setTimeout(function() {
-				$body.removeClass('is-preload');
+				//$body.removeClass('is-preload');
+				$('.gallery').removeClass('is-preload')
 			}, 100);
 		});
 
@@ -81,40 +82,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		}
 
 	// Gallery.
-		$window.on('load', function() {
-
-
-			$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?message=someone`, function(data){})
-
-			/*var $gallery = $('.gallery');
-	
-			$gallery.poptrox({
-				baseZIndex: 10001,
-				useBodyOverflow: false,
-				usePopupEasyClose: false,
-				overlayColor: '#1f2328',
-				overlayOpacity: 0.65,
-				usePopupDefaultStyling: false,
-				usePopupCaption: true,
-				popupLoaderText: '',
-				windowMargin: 50,
-				usePopupNav: true
-			});
-
-			// Hack: Adjust margins when 'small' activates.
-				breakpoints.on('>small', function() {
-					$gallery.each(function() {
-						$(this)[0]._poptrox.windowMargin = 50;
-					});
-				});
-
-				breakpoints.on('<=small', function() {
-					$gallery.each(function() {
-						$(this)[0]._poptrox.windowMargin = 5;
-					});
-				});
-		*/
-		});
+		//$window.on('load', function() {$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?message=someone`, function(data){})});
 
 
 		let s = .25;
@@ -150,11 +118,11 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 			})
 		})
 
-		$(window).on('wheel', function(event) {
+        /*$(window).on('wheel', function(event) {
 			if($(window).scrollTop() < 10) {
 				$('#right, #left').addClass('shoot');
 			}
-		})
+        })*/
 	// Section transitions.
 		if (browser.canUse('transition')) {
 
@@ -490,10 +458,295 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 
 
+    $('.gallery').on('click', 'button', function(){
+        console.log(this)
+        $('.gallery iframe').removeClass('show')
+        $(`iframe[title="${$(this).text()}"]`).addClass('show');
+    })
+
+
+
+
+    $(window).scroll(function(e){
+        console.log(this.scrollY)
+        let s = this.scrollY -  window.innerHeight + 200; 
+        let yo = window.innerHeight - this.scrollY + 300
+        $('#one').css({backgroundSize:s+'px'})
+        //$('.cube').css({transform:"scale("+i/1000+")"})
+        
+        $('#two').css({backgroundPosition:s+'px'})
+        $('#intro').css({backgroundSize:yo+'px'})
+        $('#intro .content').css({transform:"scale("+yo/1000+")"})
+        $('#contact').css({backgroundSize:s-2500+'px'})
+        //$('.cube').css({top:this.scrollY+'px', transform:"rotateY("+i+"deg)"})
+    })
+
+
+
+
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;		
+});
+
+        /*
+
+
+  
+console.log(canvas.width)
+
+
+ ctx.strokeStyle = 'rgba(0,0,255, .5)'
+
+ ctx.fillStyle ='rgba(0,0,255, .5)'
+
+// variable to hold how many frames have elapsed in the animation
+var t = 1;
+
+// define the path to plot
+var vertices = [];
+vertices.push({
+    x: 0,
+    y: 0
+});
+vertices.push({
+    x: 0,
+    y: 100
+});
+vertices.push({
+    x: 80,
+    y: 100
+});
+vertices.push({
+    x: 80,
+    y: 10
+});
+vertices.push({
+    x: 200,
+    y: 10
+});
+
+// set some style
+ctx.lineWidth = 2;
+ctx.strokeStyle = "blue";
+// calculate incremental points along the path
+var points = calcWaypoints(vertices);
+// extend the line from start to finish with animation
+animate(points);
+
+
+// calc waypoints traveling along vertices
+function calcWaypoints(vertices) {
+    var waypoints = [];
+    for (var i = 1; i < vertices.length; i++) {
+        var pt0 = vertices[i - 1];
+        var pt1 = vertices[i];
+        var dx = pt1.x - pt0.x;
+        var dy = pt1.y - pt0.y;
+        for (var j = 0; j < 100; j+=1) {
+            var x = pt0.x + dx * j / 100;
+            var y = pt0.y + dy * j / 100;
+            waypoints.push({
+                x: x,
+                y: y
+            });
+        }
+    }
+    return (waypoints);
+}
+var u = 1;
+
+
+function animate() {
+    console.log('animate')
+    if (t < points.length - 1) {
+        requestAnimationFrame(animate);
+    } else {
+        clear()
+
+    }
+    //ctx.clearRect(0,0,canvas.width,canvas.height)
+    // draw a line segment from the last waypoint
+    // to the current waypoint
+    ctx.beginPath();
+    ctx.moveTo(points[t - 1].x, points[t - 1].y);
+    ctx.lineTo(points[t].x, points[t].y);
+    ctx.stroke();
+    // increment "t" to get the next waypoint
+    t++;
+}
+    console.log(points)
+
+    
+function clear() {
+    console.log('clear')
+    if (u < points.length - 1) {
+        requestAnimationFrame(clear);
+    }    
+    ctx.strokeStyle = 'white';        
+    ctx.strokeWidth = '5px';        
+    
+    //ctx.clearRect(points[u].x, points[u].y, 1,1)
+    ctx.beginPath();
+    ctx.moveTo(points[u - 1].x, points[u - 1].y);
+    ctx.lineTo(points[u].x, points[u].y);
+    ctx.stroke();
+    // increment "t" to get the next waypoint
+    u++;
+}
+
+
+*/
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+            /*                var canvas = document.querySelector('canvas');
+            var ctx = canvas.getContext('2d');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            window.addEventListener("resize", function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;		
+            });
+
+	
+			var particles = [];
+			for( var i = 0; i < 10; i++ ) {
+				particles.push( { 
+					x:Math.random()*window.innerWidth, 
+					y:Math.random()*window.innerHeight, 
+					vx:(Math.random()*2)-1, 
+					vy:(Math.random()*2-1),
+					history: [],
+					size: 4+Math.random()*6,
+					color: Math.random() > .5 ? "#000000" : Math.random() > .5 ? "#FF0000" : "#FFFF00"
+				} );
+			}
+			
+			var mouse = { x: 0, y: 0 };
+			
+			
+			if (canvas && canvas.getContext) {
+				var context = canvas.getContext('2d');
+				
+				Initialize();
+			}
+			
+			function Initialize() {
+				canvas.addEventListener('mousemove', MouseMove, false);
+				window.addEventListener('resize', ResizeCanvas, false);
+				setInterval( TimeUpdate, 20 );
+				
+				context.beginPath();
+				
+				ResizeCanvas();
+			}
+			
+			function TimeUpdate(e) {
+				
+				context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+				
+				for( var i = 0; i < particles.length; i++ ) {
+					particles[i].x += particles[i].vx;
+					particles[i].y += particles[i].vy;
+					
+					if( particles[i].x > window.innerWidth ) {
+						particles[i].vx = -1-Math.random();
+					}
+					else if ( particles[i].x < 0 ) {
+						particles[i].vx = 1+Math.random();
+					}
+					else {
+						particles[i].vx *= 1 + (Math.random()*0.005);
+					}
+					
+					if( particles[i].y > window.innerHeight ) {
+						particles[i].vy = -1-Math.random();
+					}
+					else if ( particles[i].y < 0 ) {
+						particles[i].vy = 1+Math.random();
+					}
+					else {
+						particles[i].vy *= 1 + (Math.random()*0.005);
+					}
+					
+					context.strokeStyle = particles[i].color;
+					context.beginPath();
+					for( var j = 0; j < particles[i].history.length; j++ ) {
+						context.lineTo( particles[i].history[j].x, particles[i].history[j].y );
+					}
+					context.stroke();
+					
+					particles[i].history.push({	x: particles[i].x, y: particles[i].y });
+					if( particles[i].history.length > 45 ) {
+						particles[i].history.shift();
+					}
+					
+					var distanceFactor = DistanceBetween( mouse, particles[i] );
+					distanceFactor = Math.max( Math.min( 15 - ( distanceFactor / 10 ), 10 ), 1 );
+					
+					context.fillStyle = particles[i].color;
+					context.beginPath();
+					context.arc(particles[i].x,particles[i].y,particles[i].size*distanceFactor,0,Math.PI*2,true);
+					context.closePath();
+					context.fill();
+					
+				}
+			}
+			
+			function MouseMove(e) {
+				mouse.x = e.layerX;
+				mouse.y = e.layerY;
+				
+				//context.fillRect(e.layerX, e.layerY, 5, 5);
+				//Draw( e.layerX, e.layerY );
+			}
+			
+			function Draw( x, y ) {
+				context.strokeStyle = '#ff0000';
+				context.lineWidth = 4;
+				context.lineTo(x, y);
+				context.stroke();
+			}
+			
+			function ResizeCanvas(e) {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			
+			function DistanceBetween(p1,p2) {
+				var dx = p2.x-p1.x;
+				var dy = p2.y-p1.y;
+				return Math.sqrt(dx*dx + dy*dy);
+            }
+ */
+
+       
 })(jQuery);
+
+
+
+
+
+
