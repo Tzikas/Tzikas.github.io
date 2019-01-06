@@ -299,8 +299,11 @@ $('#loadWork').click(function(){
 })
 function addWork() {
         $('.gallery').append(
-        
-                           ` <article>
+
+							   `
+							<pre class="disclaimer">Iframes don't work on mobile. Must click gear icon and navigate to actual site</pre>
+
+						    <article>
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">

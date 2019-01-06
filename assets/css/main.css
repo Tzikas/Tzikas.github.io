@@ -2795,7 +2795,10 @@ article.show{
 #contact header {
 	color:#010101
 }
-
+.disclaimer {
+	display:none;
+	white-space: pre-wrap;
+}
 
 @media only screen and (max-width: 737px) {
 	#contact{
@@ -2803,4 +2806,8 @@ article.show{
 		/*background-position:top;*/
 		content:'hi'
 	}
+	.disclaimer {
+		display:block;
+	}
 }
+
