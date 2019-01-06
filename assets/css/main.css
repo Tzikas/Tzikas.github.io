@@ -1865,6 +1865,9 @@ input, select, textarea {
 						padding: 0 0.5em 0 0.5em;
 						outline: 0;
 					}
+					#header nav ul li a:hover {
+						color:lightblue;
+					}
 
 		@media screen and (max-width: 736px) {
 
@@ -1921,7 +1924,11 @@ input, select, textarea {
             width: 25em;
 			max-width: calc(100% - 4em);
 		    margin: 0 auto;
-            
+			/*position: absolute;
+			bottom: 50px;
+			margin: auto;
+			right: 0;
+			left: 0;*/
 		}
 
 			.main > .content > :last-child {
@@ -2331,12 +2338,12 @@ input, select, textarea {
 	#contact {
 		overflow: hidden;
 		padding-bottom: 0;
-        background:url('../../images/maps.png');
+        background:url('../../images/road.png');
         background-size: 100%;
         background-position:center;
         background-repeat:no-repeat;
         background-attachment:fixed;
-        /*height:1800px;
+        height:1500px
         /*filter: contrast(200%);*/
         
 	}
@@ -2434,7 +2441,7 @@ article.from-left, article.from-right, article{
 	position:absolute;
 	text-align:left;
 	transition: all .5s; 
-	background:rgba(0,0,0,.7);
+	background:rgba(0,0,0,.95);
 	overflow:hidden;
 	padding: 5px 10px;
 	font-size: 20px;
@@ -2550,7 +2557,8 @@ article.from-left, article.from-right, article{
     text-align: justify;
     width: 50%;
     margin: auto;
-    line-height: 30px;
+    line-height: 10px;
+    font-size:14px;
 }
 
 .fa-cog{
@@ -2699,7 +2707,7 @@ canvas {
 #one{
     z-index:2;
 }
-
+/*
 iframe{
     transition:all 1s;
     height:500px;
@@ -2708,7 +2716,6 @@ iframe{
 
 
 iframe {
-    /*overflow: hidden;*/
     pointer-events:none;
     
 }
@@ -2717,5 +2724,83 @@ iframe.show{
     display:block;
     pointer-events:inherit;	
 }
+*/
+
+article{
+    transition:all 1s;
+    height:80vh;
+    display:none;
+
+}
 
 
+article {
+    /*overflow: hidden;*/
+    pointer-events:none;
+    
+}
+
+article.show{
+    display:block;
+    pointer-events:inherit;	
+}
+
+
+#work .content{
+    width: 45em;
+}
+
+.gallery button {
+    animation: enter 1s forwards; 
+    margin: .25em 1em;
+}
+
+
+@keyframes enter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#two .content {
+	filter:invert(1)
+}
+
+.gallery{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+#contact .content {
+			position: absolute;
+			bottom: 50px;
+			margin: auto;
+			right: 0;
+			left: 0;
+}
+
+#work{
+}
+
+#work img {
+	clip-path: inset(0px 0px 65px 0px);
+	margin-top:50px;
+}
+
+#work article {
+	margin-top:50px;
+}
+#contact header {
+	color:#010101
+}
+
+
+@media only screen and (max-width: 737px) {
+	#contact{
+		background-size: cover !important;
+		/*background-position:top;*/
+		content:'hi'
+	}
+}

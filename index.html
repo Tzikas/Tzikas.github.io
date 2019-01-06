@@ -36,7 +36,7 @@
 						<li><a href="#one">Client</a></li>
 						<li><a href="#two">Server</a></li>
 						<li><a href="#work">Examples</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#footer">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -141,16 +141,21 @@
 				<div class="content">
 					<header>
 						<h2>My Work</h2>
-						<p>A collection of some of my work I've recently created.  <br>Double click to make active.</p>
+                       
+                        
 					</header>
 
 					<!-- Gallery  -->
 						<script>
 							let i = 0; 
 							function loading(iframe){
-                                console.log(iframe)
+                                //console.log(iframe)
 								i++;
-								$('.gallery').prepend( `<br/><button>${iframe.title}</button><br />`)
+								$('.gallery b span').text(i)
+								if(i === 14){
+									$('.gallery b').remove()
+								}
+								$('.gallery').prepend( `<button>${iframe.title}</button>`)
                                 
 							}	
                         
@@ -159,9 +164,10 @@
 						</script>
 
 						<div class="gallery">
-									<iframe title="Reminder-AI" onload="loading(this)" src="https://reminder-ai.herokuapp.com/"></iframe>
-									<iframe title="Battleship" onload="loading(this)" src="https://carabus-battleship.herokuapp.com/"></iframe>  
-                            
+								<button style="margin:auto" id="loadWork">Click to load my work</button>
+								<!--	<iframe title="Reminder-AI" onload="loading(this)" src="https://reminder-ai.herokuapp.com/"></iframe>
+                                <iframe title="Battleship" onload="loading(this)" src="https://carabus-battleship.herokuapp.com/"></iframe>  -->
+								 <img src="images/miner.gif"/>
                             <!--<button>Battlship</button>
                             <button>Moodful</button>-->
                         </div>

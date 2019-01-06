@@ -6,6 +6,29 @@
 
 (function($) {
 
+
+
+	let workLoaded = false; 
+
+    $(window).scroll(function(e){
+		
+		
+
+
+        let s = this.scrollY -  window.innerHeight + 200; 
+        let yo = window.innerHeight - this.scrollY + 300
+        $('#one').css({backgroundSize:s+'px'})
+        //$('.cube').css({transform:"scale("+i/1000+")"})
+        
+        $('#two').css({backgroundPosition:s+'px'})
+        $('#intro').css({backgroundSize:yo+'px'})
+        $('#intro .content').css({transform:"scale("+yo/1000+")"})
+        $('#contact').css({backgroundSize:s-1700+'px'})
+        //$('.cube').css({top:this.scrollY+'px', transform:"rotateY("+i+"deg)"})
+    })
+
+
+
 var isMobile = false; //initiate as false
 // device detection
 if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -273,19 +296,130 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 */
 
+$('#loadWork').click(function(){
+	$('#work .content header').append("<p>A collection of some of my work I've recently created.  <br><i>Click button to view.  Click the icon to see details</i></p>")
+
+	$(this).replaceWith('<b style="margin:auto;width:100%;">Loading... <span>0</span> out  of 14</b><br>')
+	addWork()
+})
+function addWork() {
+        $('.gallery').append(
+        
+                           ` <article>
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										A reminder app featuring time-progress alerts, email notifications, and speech recognition (set reminder by speech)
+										
+										<a href="https://reminder-ai.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/by12380/Reminder-ai" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>node</span><span>mongo</span><span>mongoose</span><span>socket.io</span>
+									</span>
+								</p>
+									
+									<iframe title="Reminder-AI" onload="loading(this)" src="https://reminder-ai.herokuapp.com/"></iframe>
+															
+								
+							</article>
+							<article>
+								<p class="description">
+								
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Battleship Online is a lightweight and casual game of battleship for 2 players. The idea behind the app was to get players to play the game with as little extra steps as possible. That is why players do not have to register, come up with smart and funny username or even draw battleships on the grid. All that stuff is randomly generated so players can just play.
+										<a href="https://carabus-battleship.herokuapp.com" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/battleship-online" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>node</span><span>mongo</span><span>mongoose</span><span>socket.io</span>
+									</span>
+								</p>
+
+								
+									<iframe title="Battleship" onload="loading(this)" src="https://carabus-battleship.herokuapp.com/"></iframe>  
+
+							</article>
 
 
 
 
+							<article >
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Let's Play is a MERN stack app that matches users to one another based on shared lists of video games for the purposes of meeting new gaming friends. The site allows a user to search the Internet Gaming Database (IGDB.com) for video games they like to play and add them to a list. They can view the game title, rating, year released, box art, and description. When other users add the same game to their list, the two users will be matched as potential gaming friends and can send an email initiating contact to arrange a meeting to play.
+										<a href="https://letsplayapp.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/letsplay-fullstack" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>react</span>
+										<span>redux</span>
+										<span>mongo</span>
+										<span>express</span>
+										<span>mocha/chai</span>
+										<span>webpack</span>
+										<span>travis</span>
+										<span>passport</span>
+										
+									</span>
+								</p>
+								
+									<iframe title="LetsPlay" onload="loading(this)" src="https://letsplayapp.herokuapp.com/"></iframe>  
+
+							</article>
 
 
-	$('.gallery').on('click', 'button#load', function(){
-		$('#loading, button#load').remove();
-		
-		$('.gallery').append(`
-							<div id="loading" style="display:block">Loading More...</div>
-							
-							<article class="from-right">
+
+							<article>
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Band Together is an app for musicians looking to jam. View other's profiles and click like on your favorite ones. If they like your profile, it's a match! A personal chatroom is created and you can set up your next jam sesh in real time. Demo account credentials: email - demo@demo. password - demo. You can also create your own account for the full user experience (there is an introduction for first time users).
+										<a href="https://bandtogether-app.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/BandTogether" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>node</span>
+										<span>mongo</span>
+										<span>mongoose</span>
+										<span>social-auth</span>
+										<span>socket.io</span>
+										<span>ejs</span>
+									</span>
+								</p>
+								
+									<iframe title="Band Together" onload="loading(this)" src="https://bandtogether-app.herokuapp.com/"></iframe>  
+							</article>
+							<article>
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+											CiTYSCENE gives you a quick glimpse at what is going on in a major city near you. Curious where to grab coffee? What kind of events are coming up? What's in the news, or even what people are saying on Twitter? CitYSCENE answers all your questions at a glance.
+										<a href="https://cityscene-app.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/cityscene" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>node</span>
+										<span>mongo</span>
+										<span>mongoose</span>
+										<span>jquery</span>
+									</span>
+								</p>
+								
+									<iframe title="CityScene" onload="loading(this)" src="https://cityscene-app.herokuapp.com/"></iframe>  
+
+							</article>
+
+							<article >
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Moodful is way for you to track and analyze your moods while using some basic mindfulness principles
+										<a href="https://mymoodful.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/Moodful" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>node</span><span>mongo</span><span>express</span><span>mocha/chai</span>
+									</span>
+								</p>
+								
+									<iframe title="Moodful" onload="loading(this)" src="https://mymoodful.herokuapp.com/"></iframe>  
+
+                            </article>
+<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -302,7 +436,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe  title="Fantasy Football" onload="loading(this)" src="https://sharp-nightingale-21d173.netlify.com/"></iframe>  
 
 							</article>
-							<article class="from-left">
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -320,7 +454,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 								
 									<iframe title="Ravens" onload="loading(this)" src="https://ravens-app.herokuapp.com/"></iframe>  
 							</article>
-							<article class="from-right">
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -336,7 +470,156 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe  title="Miner" onload="loading(this)"src="https://tzikas.github.io/miner/"></iframe>  
 
 							</article>
-							<article class="from-left">
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										CryptoFolio is a portfolio value tracker for cryptocurrencies, it tracks the 100 most popular cryptocurrencies and users can add the coins they own on the dashboard. After adding coins, a chart will show teh historical value of the coins they added and breakdown the total value of their portfolio throughout time.
+										<a href="https://cryoptofolio.netlify.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/CryptoFolio" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>node</span>
+										<span>mongo</span>
+										<span>mongoose</span>
+										<span>react</span>
+										<span>redux</span>										
+									</span>
+								</p>
+
+								
+									<iframe title="Cryptofolio" onload="loading(this)" src="https://cryoptofolio.netlify.com/"></iframe>  
+
+							</article>
+        
+<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Real Estate website for Long Wharf Capital
+			
+										<a href="https://longwharf.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<span><strong>Built with:</strong></span><span>php</span><span>jquery</span><span>wordpress</span>									</span>
+
+								</p>
+								
+									<iframe title="LongWharf" onload="loading(this)" src="https://longwharf.com/"></iframe>  
+
+							</article>
+								<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										This project utilizes launchlibrary.net API and WebGL Earth API to create an environment where the user can explore future scheduled space missions.
+										<a href="https://devtrader.github.io/RocketFinder/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/RocketFinder" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>webGL</span>
+										<span>three.js</span>
+										<span>google maps</span>
+									</span>
+								</p>
+								
+									<iframe title="Rocket Finder" onload="loading(this)" src="https://devtrader.github.io/RocketFinder/"></iframe>  
+
+							</article>
+
+
+
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Calculate nutrition totals based on user selected items
+										<a href="https://mactotal.netlify.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/thinkful-react-project" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>php</span><span>jquery</span><span>wordpress</span>									</span>
+								</p>
+									<iframe title="MacTotal" onload="loading(this)" src="https://mactotal.netlify.com/"></iframe>  
+
+							</article>
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+						    			Create and interact with soccer formations and tactics
+										<a href="https://soccertactics.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/thinkful-fullstack-capstone" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>node</span><span>mongo</span><span>mongoose</span><span></span>
+									</span>
+								</p>
+								
+									<iframe title="Soccer Tactics" onload="loading(this)" src="https://soccertactics.herokuapp.com/"></iframe>  
+
+							</article>
+        
+        
+        
+        `)
+
+    }
+
+
+        /*
+
+
+	$('.gallery').on('click', 'button#load', function(){
+		$('#loading, button#load').remove();
+		
+		$('.gallery').append(`
+							<div id="loading" style="display:block">Loading More...</div>
+							
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Time to see how well you did in your Fantasy League last year. Head over to FFR2017 to play now.
+										<a href="https://sharp-nightingale-21d173.netlify.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/FantasyFootball-Ranker" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>react</span>
+										<span>react-motion</span>
+										<span>netlify</span>
+									</span>
+								</p>
+								
+									<iframe  title="Fantasy Football" onload="loading(this)" src="https://sharp-nightingale-21d173.netlify.com/"></iframe>  
+
+							</article>
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Ravens is a chatting app where the rooms have a limited idle time (currently set to 15 minutes), once the time is up, the chatroom will self-delete.
+										<a href="https://ravens-app.herokuapp.com/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://github.com/thinkful-niko/Ravens" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span>
+										<span>node</span>
+										<span>mongo</span>
+										<span>socket.io</span>
+										<span>three.js</span>
+										<span>handlebars</span>
+									</span>
+								</p>
+								
+									<iframe title="Ravens" onload="loading(this)" src="https://ravens-app.herokuapp.com/"></iframe>  
+							</article>
+							<article class=" ">
+								<p class="description">
+									<i class="fa fa-cog"></i>
+									<span class="details">
+										Miner can find his way through a random maze
+										<a href="https://tzikas.github.io/miner/" target="_blank"><i class="fas fa-desktop"></i>Live</a>
+										<a href="https://gist.github.com/Tzikas/2bd045f3285727a5dac9f75fe10231bb" target="_blank"><i class="fab fa-github-square"></i>Repo</a>
+										<span><strong>Built with:</strong></span><span>javascript</span><span>es7^</span>
+									</span>
+								</p>
+
+
+								
+									<iframe  title="Miner" onload="loading(this)"src="https://tzikas.github.io/miner/"></iframe>  
+
+							</article>
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -390,7 +673,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		$('.gallery').append(`	
 							<div id="loading" style="display:block">Loading Even More!</div>
 		
-							<article class="from-left">
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -404,7 +687,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe title="LongWharf" onload="loading(this)" src="https://longwharf.com/"></iframe>  
 
 							</article>
-								<article class="from-right">
+								<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -424,7 +707,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 
 
-							<article class="from-left">
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -436,7 +719,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									<iframe title="MacTotal" onload="loading(this)" src="https://mactotal.netlify.com/"></iframe>  
 
 							</article>
-							<article class="from-right">
+							<article class=" ">
 								<p class="description">
 									<i class="fa fa-cog"></i>
 									<span class="details">
@@ -455,31 +738,17 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 
 	})
-
+*/
 
 
     $('.gallery').on('click', 'button', function(){
         console.log(this)
-        $('.gallery iframe').removeClass('show')
-        $(`iframe[title="${$(this).text()}"]`).addClass('show');
+		$('.gallery article').removeClass('show')
+		$('.gallery img').remove()
+        $(`iframe[title="${$(this).text()}"]`).parent().addClass('show');
     })
 
 
-
-
-    $(window).scroll(function(e){
-        console.log(this.scrollY)
-        let s = this.scrollY -  window.innerHeight + 200; 
-        let yo = window.innerHeight - this.scrollY + 300
-        $('#one').css({backgroundSize:s+'px'})
-        //$('.cube').css({transform:"scale("+i/1000+")"})
-        
-        $('#two').css({backgroundPosition:s+'px'})
-        $('#intro').css({backgroundSize:yo+'px'})
-        $('#intro .content').css({transform:"scale("+yo/1000+")"})
-        $('#contact').css({backgroundSize:s-2500+'px'})
-        //$('.cube').css({top:this.scrollY+'px', transform:"rotateY("+i+"deg)"})
-    })
 
 
 
