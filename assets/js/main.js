@@ -1,8 +1,3 @@
-/*
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -105,7 +100,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		}
 
 	// Gallery.
-		//$window.on('load', function() {$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?message=someone`, function(data){})});
+		$window.on('load', function() {$.get(`https://mysterious-brushlands-12496.herokuapp.com/sendEmail?message=someone`, function(data){})});
 
 
 		let s = .25;
